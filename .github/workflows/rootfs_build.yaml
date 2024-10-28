@@ -119,6 +119,7 @@ jobs:
           ls -lasih /var/cache/manjaro-arm-tools/img
           
           FILE_PATH=$(find /var/cache/manjaro-arm-tools/img -type f -name "*.tar.gz" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
+          echo $FILE_PATH
           cp -v $FILE_PATH .
 
           echo "FILE_PATH=$(basename $FILE_PATH)" >> $GITHUB_ENV
