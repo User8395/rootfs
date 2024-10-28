@@ -187,6 +187,7 @@ runs:
         ls -lasih /var/cache/manjaro-arm-tools/img
           
         FILE_PATH=$(find /var/cache/manjaro-arm-tools/img -type f -name "*.img.xz" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
+        echo $FILE_PATH
         cp -v $FILE_PATH .
         echo "file-path=$(basename $FILE_PATH)" >> $GITHUB_OUTPUT
           
