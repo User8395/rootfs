@@ -238,6 +238,7 @@ runs:
         #echo "FILE_SIG=$(basename $FILE_PATH).sig" >> $GITHUB_ENV
           
         FILE_PKG=$(find /var/cache/manjaro-arm-tools/img -type f -name "*-pkgs.txt" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
+        echo FILE PKG EQUALSSSSS
         echo $FILE_PKG
         cp -v $FILE_PKG .
         echo "file-pkg=$(basename $FILE_PKG)" >> $GITHUB_OUTPUT
